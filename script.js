@@ -1,0 +1,283 @@
+const emojipedia = [
+  // --- CARINHAS E PESSOAS (Category: carinhas) ---
+  { id: 1, category: "carinhas", emoji: "😀", name: "Riso Aberto", meaning: "Transmite alegria e felicidade." },
+  { id: 2, category: "carinhas", emoji: "😂", name: "Rir até Chorar", meaning: "Usado quando algo é muito engraçado." },
+  { id: 3, category: "carinhas", emoji: "🥰", name: "Rosto com Corações", meaning: "Expressa amor e afeição." },
+  { id: 4, category: "carinhas", emoji: "😍", name: "Olhos de Coração", meaning: "Demonstra paixão intensa." },
+  { id: 5, category: "carinhas", emoji: "🤩", name: "Olhos de Estrela", meaning: "Fascinado ou impressionado." },
+  { id: 6, category: "carinhas", emoji: "😘", name: "Beijo", meaning: "Gesto carinhoso de amor." },
+  { id: 7, category: "carinhas", emoji: "😋", name: "Delícia", meaning: "Comida boa ou satisfação." },
+  { id: 8, category: "carinhas", emoji: "😎", name: "Legal", meaning: "Confiança e estilo." },
+  { id: 9, category: "carinhas", emoji: "🤫", name: "Segredo", meaning: "Pede silêncio." },
+  { id: 10, category: "carinhas", emoji: "🤔", name: "Pensativo", meaning: "Dúvida ou reflexão." },
+  { id: 11, category: "carinhas", emoji: "😴", name: "Dormindo", meaning: "Cansaço ou tédio." },
+  { id: 12, category: "carinhas", emoji: "😡", name: "Irritado", meaning: "Raiva intensa." },
+  { id: 13, category: "carinhas", emoji: "🥳", name: "Festeiro", meaning: "Celebração e alegria." },
+  { id: 14, category: "carinhas", emoji: "😭", name: "Chorar Muito", meaning: "Tristeza profunda ou riso." },
+  { id: 15, category: "carinhas", emoji: "🤯", name: "Cabeça Explodindo", meaning: "Choque ou surpresa." },
+  { id: 16, category: "carinhas", emoji: "🤡", name: "Palhaço", meaning: "Alguém bobo." },
+  { id: 101, category: "carinhas", emoji: "😇", name: "Anjinho", meaning: "O agir de forma inocente e bondosa." },
+  { id: 102, category: "carinhas", emoji: "🤑", name: "Dinheiro na Boca", meaning: "Riqueza ou ganância." },
+  { id: 103, category: "carinhas", emoji: "🤓", name: "Nerd", meaning: "Inteligência ou entusiasmo por estudos." },
+  { id: 104, category: "carinhas", emoji: "👻", name: "Fantasma", meaning: "Algo assustador ou engraçado." },
+  { id: 105, category: "carinhas", emoji: "👽", name: "Alienígena", meaning: "Algo fora deste mundo." },
+  { id: 106, category: "carinhas", emoji: "💩", name: "Cocô", meaning: "Situação ruim ou humor bobo." },
+  { id: 119, category: "carinhas", emoji: "🫠", name: "Rosto Derretendo", meaning: "Sufoco pelo calor ou constrangimento." },
+  { id: 120, category: "carinhas", emoji: "🫡", name: "Saudação", meaning: "Respeito ou 'entendido'." },
+  { id: 121, category: "carinhas", emoji: "🫤", name: "Rosto Confuso", meaning: "Indecisão ou ceticismo." },
+  { id: 122, category: "carinhas", emoji: "🥺", name: "Rosto Pedinte", meaning: "Súplica ou estar emocionado." },
+  { id: 123, category: "carinhas", emoji: "🤢", name: "Enojado", meaning: "Sensação de mal-estar ou asco." },
+  { id: 124, category: "carinhas", emoji: "🤮", name: "Vomitando", meaning: "Extremamente doente ou asco total." },
+
+  // --- ANIMAIS E NATUREZA (Category: animais) ---
+  { id: 17, category: "animais", emoji: "🐱", name: "Gato", meaning: "Fofura e independência." },
+  { id: 18, category: "animais", emoji: "🐶", name: "Cachorro", meaning: "Lealdade e amizade." },
+  { id: 19, category: "animais", emoji: "🦁", name: "Leão", meaning: "Coragem e força." },
+  { id: 20, category: "animais", emoji: "🐯", name: "Tigre", meaning: "Poder e agilidade." },
+  { id: 21, category: "animais", emoji: "🐻", name: "Urso", meaning: "Força bruta ou carinho." },
+  { id: 22, category: "animais", emoji: "🐼", name: "Panda", meaning: "Fofura oriental." },
+  { id: 23, category: "animais", emoji: "🦄", name: "Unicórnio", meaning: "Magia e fantasia." },
+  { id: 24, category: "animais", emoji: "🦋", name: "Borboleta", meaning: "Transformação e beleza." },
+  { id: 25, category: "animais", emoji: "🐝", name: "Abelha", meaning: "Trabalho duro." },
+  { id: 107, category: "animais", emoji: "🐘", name: "Elefante", meaning: "Memória e grandeza." },
+  { id: 108, category: "animais", emoji: "🦒", name: "Girafa", meaning: "Visão ampla e altura." },
+  { id: 109, category: "animais", emoji: "🦓", name: "Zebra", meaning: "Individualidade." },
+  { id: 110, category: "animais", emoji: "🦍", name: "Gorila", meaning: "Poder e proteção." },
+  { id: 111, category: "animais", emoji: "🦩", name: "Flamingo", meaning: "Equilíbrio e elegância." },
+  { id: 125, category: "animais", emoji: "🐳", name: "Baleia Espirrando", meaning: "Majestade dos oceanos." },
+  { id: 126, category: "animais", emoji: "🦀", name: "Caranguejo", meaning: "Signo de câncer ou praia." },
+  { id: 127, category: "animais", emoji: "🐙", name: "Polvo", meaning: "Mestre da camuflagem e inteligência." },
+  { id: 128, category: "animais", emoji: "🦂", name: "Escorpião", meaning: "Perigo ou signo do zodíaco." },
+  { id: 129, category: "animais", emoji: "🦅", name: "Águia", meaning: "Liberdade e visão aguçada." },
+  { id: 130, category: "animais", emoji: "🦉", name: "Coruja", meaning: "Sabedoria e vida noturna." },
+
+  // --- COMIDAS E BEBITAS (Category: comida) ---
+  { id: 31, category: "comida", emoji: "🍎", name: "Maçã", meaning: "Saúde e conhecimento." },
+  { id: 32, category: "comida", emoji: "🥑", name: "Abacate", meaning: "Vida saudável." },
+  { id: 33, category: "comida", emoji: "🍔", name: "Hambúrguer", meaning: "Satisfação e fast food." },
+  { id: 34, category: "comida", emoji: "🍕", name: "Pizza", meaning: "Reunião e diversão." },
+  { id: 35, category: "comida", emoji: "🍣", name: "Sushi", meaning: "Culinária japonesa." },
+  { id: 36, category: "comida", emoji: "🌮", name: "Taco", meaning: "Culinária mexicana." },
+  { id: 112, category: "comida", emoji: "🍩", name: "Donut", meaning: "Doçura irresistível." },
+  { id: 113, category: "comida", emoji: "🍰", name: "Bolo", meaning: "Celebração e festa." },
+  { id: 114, category: "comida", emoji: "🍜", name: "Ramen", meaning: "Conforto e sabor oriental." },
+  { id: 115, category: "comida", emoji: "🍿", name: "Pipoca", meaning: "Cinema e entretenimento." },
+  { id: 131, category: "comida", emoji: "🍟", name: "Batata Frita", meaning: "Petisco universal." },
+  { id: 132, category: "comida", emoji: "🍨", name: "Sorvete de Taça", meaning: "Refresco e alegria." },
+  { id: 133, category: "comida", emoji: "🥞", name: "Panquecas", meaning: "Café da manhã clássico." },
+  { id: 134, category: "comida", emoji: "🥨", name: "Pretzel", meaning: "Salgadinho torcido." },
+  { id: 135, category: "comida", emoji: "🥐", name: "Croissant", meaning: "Delicadeza francesa." },
+
+  // --- VIAGENS E TECNOLOGIA (Category: tech) ---
+  { id: 44, category: "tech", emoji: "🚀", name: "Foguete", meaning: "Velocidade e inovação." },
+  { id: 50, category: "tech", emoji: "💻", name: "Laptop", meaning: "Mundo digital e trabalho." },
+  { id: 51, category: "tech", emoji: "🎮", name: "Controle", meaning: "Games e diversão." },
+  { id: 52, category: "tech", emoji: "💡", name: "Lâmpada", meaning: "Ideia brilhante." },
+  { id: 180, category: "tech", emoji: "🤖", name: "Robô", meaning: "IA e automação." },
+  { id: 116, category: "tech", emoji: "📱", name: "Smartphone", meaning: "Comunicação e conectividade." },
+  { id: 117, category: "tech", emoji: "📡", name: "Antena", meaning: "Transmissão de dados." },
+  { id: 118, category: "tech", emoji: "🔌", name: "Plugue", meaning: "Energia e conexão." },
+  { id: 136, category: "tech", emoji: "📠", name: "Fax", meaning: "Tecnologia vintage." },
+  { id: 137, category: "tech", emoji: "💾", name: "Disquete", meaning: "Ícone de salvar arquivado." },
+  { id: 138, category: "tech", emoji: "🔋", name: "Bateria", meaning: "Nível de energia." },
+
+  // --- SÍMBOLOS E GESTOS (Category: simbolos) ---
+  { id: 58, category: "simbolos", emoji: "❤️", name: "Coração", meaning: "O símbolo máximo do amor." },
+  { id: 59, category: "simbolos", emoji: "🔥", name: "Fogo", meaning: "Algo está quente ou muito bom." },
+  { id: 60, category: "simbolos", emoji: "✨", name: "Brilhos", meaning: "Magia, limpeza ou algo novo." },
+  { id: 81, category: "simbolos", emoji: "👍", name: "Joinha", meaning: "Concordância e aprovação." },
+  { id: 79, category: "simbolos", emoji: "👏", name: "Aplausos", meaning: "Reconhecimento de um bom trabalho." },
+  { id: 100, category: "simbolos", emoji: "🙏", name: "Agradecer", meaning: "Gratidão profunda por tudo." },
+  { id: 139, category: "simbolos", emoji: "✅", name: "Check", meaning: "Correção ou verificação." },
+  { id: 140, category: "simbolos", emoji: "❌", name: "Cruz", meaning: "Erro ou proibição." },
+  { id: 141, category: "simbolos", emoji: "⚠️", name: "Alerta", meaning: "Cuidado ou perigo." },
+  { id: 142, category: "simbolos", emoji: "🌀", name: "Ciclone", meaning: "Movimento ou confusão." },
+  { id: 143, category: "simbolos", emoji: "♾️", name: "Infinito", meaning: "Algo que não tem fim." },
+
+  // --- BANDEIRAS (Category: bandeiras) ---
+  { id: 200, category: "bandeiras", emoji: "🇧🇷", name: "Brasil", meaning: "Pátria amada Brasil." },
+  { id: 201, category: "bandeiras", emoji: "🇺🇸", name: "EUA", meaning: "Estados Unidos da América." },
+  { id: 202, category: "bandeiras", emoji: "🇵🇹", name: "Portugal", meaning: "Terra de Cabral." },
+  { id: 203, category: "bandeiras", emoji: "🇮🇹", name: "Itália", meaning: "Berço do Renascimento." },
+  { id: 204, category: "bandeiras", emoji: "🇫🇷", name: "França", meaning: "Cidade luz." },
+  { id: 205, category: "bandeiras", emoji: "🇯🇵", name: "Japão", meaning: "Terra do Sol Nascente." },
+  { id: 206, category: "bandeiras", emoji: "🇩🇪", name: "Alemanha", meaning: "Força europeia." },
+  { id: 207, category: "bandeiras", emoji: "🇦🇷", name: "Argentina", meaning: "Nossos vizinhos." },
+  { id: 208, category: "bandeiras", emoji: "🇪🇸", name: "Espanha", meaning: "Cultura vibrante." },
+  { id: 209, category: "bandeiras", emoji: "🇨🇦", name: "Canadá", meaning: "Folha de bordo." },
+  { id: 210, category: "bandeiras", emoji: "🇬🇧", name: "Reino Unido", meaning: "Terra da Rainha." },
+  { id: 211, category: "bandeiras", emoji: "🇨🇳", name: "China", meaning: "Dragão do Oriente." },
+  { id: 212, category: "bandeiras", emoji: "🇰🇷", name: "Coreia do Sul", meaning: "Cultura K-pop e tecnologia." },
+  { id: 213, category: "bandeiras", emoji: "🇲🇽", name: "México", meaning: "Culinária e cores." },
+  { id: 214, category: "bandeiras", emoji: "🇷🇺", name: "Rússia", meaning: "Vasto território." },
+
+  // --- MARCAS (Category: marcas) - Using representative Emojis ---
+  { id: 300, category: "marcas", emoji: "🍎", name: "Apple", meaning: "Referência mundial em tecnologia e design." },
+  { id: 301, category: "marcas", emoji: "🏎️", name: "Ferrari", meaning: "Velocidade, luxo e prestígio automotivo." },
+  { id: 302, category: "marcas", emoji: "👟", name: "Nike", meaning: "Líder mundial em esportes e calçados." },
+  { id: 303, category: "marcas", emoji: "🥤", name: "Coca-Cola", meaning: "A bebida mais famosa do planeta." },
+  { id: 304, category: "marcas", emoji: "🍟", name: "McDonald's", meaning: "A maior rede de fast food do mundo." },
+  { id: 305, category: "marcas", emoji: "☕", name: "Starbucks", meaning: "Conectando pessoas através do café." },
+  { id: 306, category: "marcas", emoji: "📺", name: "Netflix", meaning: "Líder global em streaming de vídeo." },
+  { id: 307, category: "marcas", emoji: "🏰", name: "Disney", meaning: "Onde a magia acontece." },
+  { id: 308, category: "marcas", emoji: "👤", name: "Facebook", meaning: "A maior rede social do mundo." },
+  { id: 309, category: "marcas", emoji: "📸", name: "Instagram", meaning: "Compartilhando momentos visuais." },
+  { id: 310, category: "marcas", emoji: "📽️", name: "YouTube", meaning: "Plataforma global de vídeos." },
+  { id: 311, category: "marcas", emoji: "🪟", name: "Microsoft", meaning: "Software e tecnologia para todos." },
+  { id: 312, category: "marcas", emoji: "📦", name: "Amazon", meaning: "Tudo o que você precisa em um clique." },
+  { id: 313, category: "marcas", emoji: "🔍", name: "Google", meaning: "Organizando a informação do mundo." }
+];
+
+const categories = [
+    { id: "todos", label: "Todos", icon: "🌐" },
+    { id: "carinhas", label: "Carinhas", icon: "😊" },
+    { id: "animais", label: "Animais", icon: "🐾" },
+    { id: "comida", label: "Comida", icon: "🍕" },
+    { id: "tech", label: "Tech", icon: "🚀" },
+    { id: "simbolos", label: "Símbolos", icon: "✨" },
+    { id: "bandeiras", label: "Bandeiras", icon: "🚩" },
+    { id: "marcas", label: "Marcas", icon: "🏷️" },
+];
+
+let searchTerm = "";
+let selectedCategory = "todos";
+
+// DOM Elements
+const dictionary = document.getElementById("dictionary");
+const searchInput = document.getElementById("search-input");
+const categoryFilters = document.getElementById("category-filters");
+const searchStats = document.getElementById("search-stats");
+const surpriseBtn = document.getElementById("surprise-btn");
+const copyToast = document.getElementById("copy-toast");
+const scrollTopBtn = document.getElementById("scroll-top");
+const emojiBg = document.getElementById("emoji-bg");
+
+// Initial Render
+function init() {
+    renderCategories();
+    renderEmojis();
+    createFallingEmojis();
+    
+    // Event Listeners
+    searchInput.addEventListener("input", (e) => {
+        searchTerm = e.target.value;
+        renderEmojis();
+    });
+
+    surpriseBtn.addEventListener("click", handleSurprise);
+    
+    scrollTopBtn.addEventListener("click", () => {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+    });
+
+    window.addEventListener("scroll", () => {
+        scrollTopBtn.style.display = window.scrollY > 400 ? "flex" : "none";
+    });
+}
+
+function renderCategories() {
+    categoryFilters.innerHTML = categories.map(cat => `
+        <button 
+            class="filter-pill ${selectedCategory === cat.id ? 'active' : ''}"
+            onclick="selectCategory('${cat.id}')"
+        >
+            <span>${cat.icon}</span> ${cat.label}
+        </button>
+    `).join("");
+}
+
+window.selectCategory = function(categoryId) {
+    selectedCategory = categoryId;
+    renderCategories();
+    renderEmojis();
+};
+
+function renderEmojis() {
+    const filteredEmojis = emojipedia.filter((item) => {
+        const matchesSearch = 
+            item.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
+            item.meaning.toLowerCase().includes(searchTerm.toLowerCase()) ||
+            item.emoji.includes(searchTerm);
+        
+        const matchesCategory = selectedCategory === "todos" || item.category === selectedCategory;
+        
+        return matchesSearch && matchesCategory;
+    });
+
+    if (filteredEmojis.length > 0) {
+        dictionary.innerHTML = filteredEmojis.map(emojiTerm => `
+            <div onclick="handleCopy('${emojiTerm.emoji}')" class="entry-wrapper">
+                <div class="term">
+                    <dt>
+                        <span class="emoji" role="img" aria-label="${emojiTerm.name}">
+                            ${emojiTerm.emoji}
+                        </span>
+                        <span>${emojiTerm.name}</span>
+                    </dt>
+                    <dd>${emojiTerm.meaning}</dd>
+                </div>
+            </div>
+        `).join("");
+        searchStats.innerHTML = `${filteredEmojis.length} emojis encontrados`;
+    } else {
+        dictionary.innerHTML = `
+            <div class="no-results">
+                <span role="img" aria-label="shrug">🤷‍♂️</span>
+                <p>Nenhum emoji encontrado para "${searchTerm}"</p>
+            </div>
+        `;
+        searchStats.innerHTML = `Nenhum resultado`;
+    }
+}
+
+window.handleCopy = function(emoji) {
+    navigator.clipboard.writeText(emoji).then(() => {
+        showToast(`Copiado: ${emoji}`);
+    });
+};
+
+function showToast(message) {
+    copyToast.textContent = message;
+    copyToast.style.display = "block";
+    setTimeout(() => {
+        copyToast.style.display = "none";
+    }, 2000);
+}
+
+function handleSurprise() {
+    const randomEmoji = emojipedia[Math.floor(Math.random() * emojipedia.length)];
+    searchInput.value = randomEmoji.name;
+    searchTerm = randomEmoji.name;
+    selectedCategory = "todos";
+    renderCategories();
+    renderEmojis();
+    window.scrollTo({ top: 300, behavior: "smooth" });
+}
+
+function createFallingEmojis() {
+    const emojis = ["😀", "😂", "🥰", "🚀", "✨", "🐶", "🍕", "🌈", "🔥", "💎"];
+    const count = 15;
+
+    for (let i = 0; i < count; i++) {
+        const emoji = document.createElement("div");
+        emoji.className = "falling-emoji";
+        emoji.textContent = emojis[Math.floor(Math.random() * emojis.length)];
+        
+        // Random properties
+        const startPos = Math.random() * 100;
+        const delay = Math.random() * 20;
+        const duration = 10 + Math.random() * 15;
+        const size = 1 + Math.random() * 3;
+
+        emoji.style.left = `${startPos}%`;
+        emoji.style.animationDelay = `${delay}s`;
+        emoji.style.animationDuration = `${duration}s`;
+        emoji.style.fontSize = `${size}rem`;
+        emoji.style.opacity = Math.random() * 0.5 + 0.1;
+
+        emojiBg.appendChild(emoji);
+    }
+}
+
+// Initialize
+init();

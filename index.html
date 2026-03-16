@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-  <head>
+<head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
+    <title>Emojipedia - Dicionário de Emojis</title>
+    
     <!-- Modern Font: Outfit -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -11,11 +12,48 @@
     
     <link rel="stylesheet" href="./styles.css" />
     <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🚀</text></svg>">
-   
-    <title>Emojipedia - Dicionário de Emojis</title>
-  </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="./src/index.jsx"></script>
-  </body>
+</head>
+<body>
+    <div id="emoji-bg" class="emoji-bg-container"></div>
+    
+    <div class="app-container">
+        <div id="copy-toast" class="copy-toast" style="display: none;"></div>
+
+        <div id="scroll-top" class="scroll-to-top" style="display: none;">↑</div>
+
+        <header>
+            <h1>
+                <span>emojipedia</span>
+            </h1>
+            <div class="search-container">
+                <input
+                    id="search-input"
+                    type="text"
+                    placeholder="Pesquisar emoji (ex: fogo, rindo...)"
+                    class="search-bar"
+                />
+                
+                <div id="category-filters" class="category-filters">
+                    <!-- Categories will be injected here -->
+                </div>
+
+                <div id="search-stats" class="search-stats"></div>
+
+                <button id="surprise-btn" class="surprise-btn">
+                    🎲 Me surpreenda!
+                </button>
+            </div>
+        </header>
+
+        <dl id="dictionary" class="dictionary">
+            <!-- Emojis will be injected here -->
+        </dl>
+        
+        <footer>
+            <p>© 2026 Emojipedia - Feito com ✨ e 🚀</p>
+        </footer>
+    </div>
+
+    <script src="./script.js"></script>
+</body>
 </html>
